@@ -1,17 +1,46 @@
-# Основные зависимости проекта
-# Установка: py -m pip install -r requirements.txt
+# SignalAnalyzer Desktop Application Dependencies
+# Installation: py -m pip install -r requirements.txt
 
-# Конфигурация
+# Core GUI Framework
+PyQt6>=6.5.0
+PyQt6-Qt6>=6.5.0
+
+# Scientific Computing & Data Processing
+numpy>=1.25.0
+pandas>=2.1.0
+scipy>=1.11.0
+sympy>=1.11.0
+
+# Visualization & Graphics
+matplotlib>=3.8.0
+pyqtgraph>=0.13.0
+PyOpenGL>=3.1.0
+PyOpenGL-accelerate>=3.1.0
+
+# Database Support
+SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0  # PostgreSQL support
+sqlite3  # Built-in with Python
+
+# Configuration & Utilities
 python-dotenv>=1.0.0
-
-# Логирование
 loguru>=0.7.0
-
-# HTTP клиенты
 requests>=2.31.0
 
-# Дополнительные утилиты (опционально)
-# pandas>=2.1.0
-# numpy>=1.25.0
-# fastapi>=0.104.0
-# flask>=3.0.0
+# Testing Framework
+pytest>=7.4.0
+pytest-qt>=4.2.0
+pytest-cov>=4.1.0
+
+# GPU Acceleration (Optional)
+cupy-cuda12x>=12.0.0  # For NVIDIA GPU support
+# cupy-cuda11x>=11.0.0  # Alternative CUDA version
+
+# Development Tools
+black>=23.0.0
+flake8>=6.0.0
+isort>=5.12.0
+mypy>=1.5.0
+
+# Cross-platform compatibility
+pyinstaller>=6.0.0  # For packaging

@@ -1,50 +1,69 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# SignalAnalyzer Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Desktop-First Architecture
+SignalAnalyzer is designed as a native desktop application using PyQt6 for optimal performance with mathematical computations and real-time graphics. The application prioritizes responsiveness, low latency, and full system resource utilization over web-based alternatives.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Mathematical Accuracy & Performance
+All mathematical operations must use numpy/pandas for vectorized computations, achieving sub-millisecond response times for signal generation and real-time plotting. Mathematical models are implemented using scipy/sympy for scientific precision.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Modular Component Design
+Each functional component (2D plots, 3D visualization, oscilloscope, data generator) must be implemented as independent, testable modules with clear interfaces. Components communicate through well-defined data contracts.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Test-Driven Development (NON-NEGOTIABLE)
+TDD mandatory for all mathematical functions, GUI interactions, and data processing pipelines. Tests must validate numerical accuracy, GUI responsiveness, and memory efficiency. Red-Green-Refactor cycle strictly enforced.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Real-Time Performance Standards
+Oscilloscope and animated plots must maintain 60+ FPS with configurable buffer sizes. Memory usage must remain stable during extended operation. All GUI operations must complete within 16ms (60 FPS threshold).
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Stack Requirements
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### GUI Framework
+- **Primary**: PyQt6 for native desktop performance
+- **Alternative**: Kivy for cross-platform compatibility if needed
+- **Widgets**: Custom widgets for signal visualization and controls
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Graphics & Visualization
+- **2D Plotting**: matplotlib with PyQt integration for static plots
+- **Real-time Graphics**: pyqtgraph for oscilloscope and animated plots
+- **3D Visualization**: PyOpenGL for complex 3D surfaces and volumes
+- **Performance**: Hardware acceleration where available
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Data Processing
+- **Numerical Computing**: numpy for vectorized operations
+- **Data Analysis**: pandas for structured data manipulation
+- **Scientific Computing**: scipy for signal processing algorithms
+- **Symbolic Math**: sympy for equation modeling and validation
+
+## Development Workflow
+
+### Code Quality Standards
+- All mathematical functions must include unit tests with known test vectors
+- GUI components must be tested for responsiveness and memory leaks
+- Performance benchmarks required for critical paths (signal generation, plotting)
+- Code coverage minimum: 85% for mathematical modules, 70% for GUI components
+
+### Architecture Guidelines
+- Separate concerns: GUI logic, mathematical computations, and data I/O
+- Use dependency injection for testability
+- Implement observer pattern for real-time data updates
+- Memory management: explicit cleanup for large datasets and graphics objects
+
+### Testing Framework
+- **Unit Tests**: pytest for mathematical functions and data processing
+- **GUI Tests**: pytest-qt for PyQt6 component testing
+- **Performance Tests**: Custom benchmarks for real-time requirements
+- **Integration Tests**: End-to-end workflows from data generation to visualization
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+SignalAnalyzer Constitution supersedes all other development practices. Amendments require:
+1. Performance impact analysis for any architectural changes
+2. Mathematical accuracy validation for algorithm modifications
+3. User experience impact assessment for GUI changes
+4. Migration plan for backward compatibility
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+All code reviews must verify compliance with performance standards and mathematical accuracy. Complexity must be justified with measurable performance benefits.
+
+**Version**: 1.0.0 | **Ratified**: 2025-10-04 | **Last Amended**: 2025-10-04
