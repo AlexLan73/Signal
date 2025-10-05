@@ -1,0 +1,39 @@
+{
+  "strobe_id": "test_3_rays",
+  "total_length": 3072,
+  "num_rays": 3,
+  "points_per_ray": 1024,
+  "sample_rate": 100000.0,
+  "rays": [
+    {
+      "ray_id": 0,
+      "signal_type": "sine",
+      "frequency": 333.3333333333333,
+      "amplitude": 1.0,
+      "phase": 0.0,
+      "start_index": 0,
+      "end_index": 1024,
+      "data_length": 1024
+    },
+    {
+      "ray_id": 1,
+      "signal_type": "sine",
+      "frequency": 400.0,
+      "amplitude": 1.0,
+      "phase": 0.0,
+      "start_index": 1024,
+      "end_index": 2048,
+      "data_length": 1024
+    },
+    {
+      "ray_id": 2,
+      "signal_type": "sine",
+      "frequency": 500.0,
+      "amplitude": 1.0,
+      "phase": 0.0,
+      "start_index": 2048,
+      "end_index": 3072,
+      "data_length": 1024
+    }
+  ]
+}

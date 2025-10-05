@@ -1,0 +1,8 @@
+{
+  "strobe_id": "test_3_rays",
+  "total_length": 3072,
+  "num_rays": 3,
+  "points_per_ray": 1024,
+  "sample_rate": 100000.0,
+  "ray_parameters": [
+    
